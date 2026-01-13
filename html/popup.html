@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Volume Master Max</title>
+  <link href="../css/popup.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ═══ Header ═══ -->
+  <header class="header">
+    <div class="header__left">
+      <img class="header__icon js-diagnostics__cog" src="../icon/icon-48.png" alt="Volume Master Max">
+      <span class="header__name">Volume Master Max</span>
+    </div>
+    <button type="button" class="btn-icon js-settings-switch" title="Settings" aria-label="Settings">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <path
+          d="M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4s-.6 17.1-1.7 25.4l43.3 39.4c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-55.7-17.7c-13.4 10.3-28.2 18.9-44 25.4l-12.5 57.1c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-12.5-57.1c-15.8-6.5-30.6-15.1-44-25.4L83.1 425.9c-8.8 2.8-18.6 .3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4C64.6 273.1 64 264.6 64 256s.6-17.1 1.7-25.4L22.4 191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l55.7 17.7c13.4-10.3 28.2-18.9 44-25.4l12.5-57.1c2-9.1 9-16.3 18.2-17.8C227.3 1.2 241.5 0 256 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l12.5 57.1c15.8 6.5 30.6 15.1 44 25.4l55.7-17.7c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM256 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z" />
+      </svg>
+    </button>
+  </header>
+
+  <!-- ═══ Settings Panel ═══ -->
+  <section class="settings-panel js-settings-frame is-hidden">
+    <div class="settings-row js-dark-mode-switch">
+      <label class="settings-label" for="enableDarkMode">Dark mode</label>
+      <input type="checkbox" id="enableDarkMode" class="toggle js-dark-mode-switch__checkbox">
+    </div>
+    <div class="settings-row js-scroll-direction-switch">
+      <label class="settings-label" for="invertScrollDirection">Invert scroll</label>
+      <input type="checkbox" id="invertScrollDirection" class="toggle js-scroll-direction-switch__checkbox">
+    </div>
+    <div class="settings-row">
+      <span class="settings-label">Shortcuts guide</span>
+      <button type="button" class="settings-btn js-open-shortcuts-tutorial">View Tutorial</button>
+    </div>
+  </section>
+
+  <!-- ═══ Diagnostics ═══ -->
+  <section class="diag-panel is-hidden js-diagnostics">
+    <div class="diag-panel__data js-diagnostics__data"></div>
+    <div class="js-diagnostics__data-encoded" style="display:none"></div>
+  </section>
+
+  <!-- ═══ Outdated Browser ═══ -->
+  <section class="alert-banner is-hidden js-outdated-browsers-manager">
+    ⚠ Your browser version may affect performance.
+  </section>
+
+  <!-- ═══ Volume Hero ═══ -->
+  <section class="vol-hero">
+    <div class="vol-display">
+      <span class="vol-display__value js-volume-info__volume-value">100</span>
+      <span class="vol-display__unit">%</span>
+    </div>
+    <input class="vol-slider js-volume-slider__slider" type="range" autofocus data-max-volume="600">
+    <div class="vol-limits">
+      <span>0%</span>
+      <span class="vol-limits__max"><span class="js-volume-info__volume-max">600</span>%</span>
+    </div>
+  </section>
+
+  <!-- ═══ EQ Presets ═══ -->
+  <section class="eq-bar js-audio-equalizer">
+    <div class="eq-bar__presets">
+      <button class="eq-btn js-audio-equalizer__preset is-active" data-equalizer-type="default">
+        <i class="icon-ccw"></i> Default
+      </button>
+      <button class="eq-btn js-audio-equalizer__preset" data-equalizer-type="voice">
+        <i class="icon-mic"></i> Voice
+      </button>
+      <button class="eq-btn js-audio-equalizer__preset" data-equalizer-type="bass">
+        <i class="icon-rocket"></i> Bass
+      </button>
+    </div>
+    <!-- EQ sliders (hidden, advanced) -->
+    <div class="c-equalizer__sliders is-hidden">
+      <select class="eq-select js-audio-equalizer__algorithm">
+        <option value="lowpass">Lowpass</option>
+        <option value="highpass">Highpass</option>
+        <option value="bandpass">Bandpass</option>
+        <option value="lowshelf">Lowshelf</option>
+        <option value="highshelf">Highshelf</option>
+        <option value="peaking">Peaking</option>
+        <option value="notch">Notch</option>
+        <option value="allpass">Allpass</option>
+      </select>
+      <div class="eq-row">
+        <span class="eq-row__label">Freq</span>
+        <input class="js-audio-equalizer__frequency" type="range" min="0" max="24000" value="440" step="10">
+        <span class="eq-row__val js-audio-equalizer__frequency-value"></span> Hz
+      </div>
+      <div class="eq-row">
+        <span class="eq-row__label">Q</span>
+        <input class="js-audio-equalizer__q" type="range" min="0.1" max="20" value="1" step="0.1">
+        <span class="eq-row__val js-audio-equalizer__q-value"></span>
+      </div>
+      <div class="eq-row">
+        <span class="eq-row__label">Gain</span>
+        <input class="js-audio-equalizer__gain" type="range" min="-40" max="40" value="0" step="1">
+        <span class="eq-row__val js-audio-equalizer__gain-value"></span> dB
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Actions ═══ -->
+  <section class="actions js-audio-analyser is-hidden">
+    <div class="c-analyser__pane js-audio-analyser__before-wrapper is-hidden">
+      <canvas class="c-analyser__canvas js-audio-analyser__before-canvas" height="40"></canvas>
+      <div class="c-analyser__description">Signal before · 0 Hz – <span
+          class="js-audio-analyser__before-freq-end">22050</span> Hz</div>
+    </div>
+    <div class="c-analyser__pane js-audio-analyser__after-wrapper is-hidden">
+      <canvas class="c-analyser__canvas js-audio-analyser__after-canvas" height="40"></canvas>
+      <div class="c-analyser__description">Frequency analyzer · 0 Hz – <span
+          class="js-audio-analyser__after-freq-end">22050</span> Hz</div>
+    </div>
+  </section>
+
+  <div class="action-strip">
+    <button class="action-btn js-actions__reset is-hidden">
+      <i class="icon-reset"></i> Reset to 100%
+    </button>
+    <button class="action-btn action-btn--restore js-actions__restore is-hidden">
+      <i class="icon-history"></i> Restore <span class="js-actions__restore-value"></span>% for <em
+        class="js-actions__restore-domain"></em>
+    </button>
+  </div>
+
+  <!-- ═══ Other Tabs ═══ -->
+  <section class="tabs-section">
+    <div class="tabs-section__header js-tabs__title"></div>
+    <div class="tabs-list js-tabs__list"></div>
+  </section>
+
+  <!-- ═══ Footer ═══ -->
+  <footer class="footer">
+    Made with <span class="footer__heart js-heart">♥</span> by <strong>Pratham Jain</strong>
+  </footer>
+
+  <script src="../js/popup.js"></script>
+
+  <!-- Tab card template -->
+  <template class="js-template-tab">
+    <div class="tab-card js-tab">
+      <div class="tab-card__info js-tab__header">
+        <img class="tab-card__favicon js-tab__icon-image" src="" alt="">
+        <span class="tab-card__title js-tab__title"></span>
+        <span class="tab-card__vol js-tab__volume-badge">100%</span>
+      </div>
+      <input type="range" class="tab-card__slider js-tab__slider" min="0" max="600" value="100">
+    </div>
+  </template>
+
+  <!-- ═══ Keyboard Shortcuts Tutorial Modal ═══ -->
+  <div class="tutorial-modal js-tutorial-modal is-hidden" role="dialog" aria-labelledby="tutorial-title" aria-modal="true">
+    <div class="tutorial-backdrop js-tutorial-backdrop"></div>
+    <div class="tutorial-card">
+      <div class="tutorial-header">
+        <div class="tutorial-header__title" id="tutorial-title">
+          <svg class="tutorial-icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path d="M20 5H4c-1.1 0-1.99.9-1.99 2L2 17c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-9 3h2v2h-2V8zm0 3h2v2h-2v-2zM8 8h2v2H8V8zm0 3h2v2H8v-2zm-1 2H5v-2h2v2zm0-3H5V8h2v2zm9 7H8v-2h8v2zm0-4h-2v-2h2v2zm0-3h-2V8h2v2zm3 7h-2v-2h2v2zm0-3h-2v-2h2v2z"/>
+          </svg>
+          Keyboard Shortcuts
+        </div>
+        <button type="button" class="tutorial-close-btn js-tutorial-close" aria-label="Close tutorial">&times;</button>
+      </div>
+
+      <div class="tutorial-body">
+        <p class="tutorial-intro">Master your volume controls with simple key presses!</p>
+        
+        <div class="tutorial-grid">
+          <div class="tutorial-item">
+            <div class="tutorial-keys">
+              <kbd class="kbd-key">0</kbd> &ndash; <kbd class="kbd-key">6</kbd>
+            </div>
+            <div class="tutorial-desc">
+              <strong>Quick Volume Jump</strong>
+              <span>0 = 0%, 1 = 100%, 2 = 200% up to 6 = 600%</span>
+            </div>
+          </div>
+
+          <div class="tutorial-item">
+            <div class="tutorial-keys">
+              <kbd class="kbd-key">↑</kbd> <kbd class="kbd-key">↓</kbd> / <kbd class="kbd-key">←</kbd> <kbd class="kbd-key">→</kbd>
+            </div>
+            <div class="tutorial-desc">
+              <strong>Volume Step Control</strong>
+              <span>Increase or decrease volume in 10% steps</span>
+            </div>
+          </div>
+
+          <div class="tutorial-item">
+            <div class="tutorial-keys">
+              <kbd class="kbd-key">D</kbd> <kbd class="kbd-key">V</kbd> <kbd class="kbd-key">B</kbd>
+            </div>
+            <div class="tutorial-desc">
+              <strong>Equalizer Presets</strong>
+              <span>D = Default, V = Voice, B = Bass</span>
+            </div>
+          </div>
+
+          <div class="tutorial-item">
+            <div class="tutorial-keys">
+              <kbd class="kbd-key">R</kbd>
+            </div>
+            <div class="tutorial-desc">
+              <strong>Reload Popup</strong>
+              <span>Reset & refresh extension view instantly</span>
+            </div>
+          </div>
+
+          <div class="tutorial-item tutorial-item--full">
+            <div class="tutorial-keys">
+              <kbd class="kbd-key">Global Hotkey</kbd>
+            </div>
+            <div class="tutorial-desc">
+              <strong>Open Extension Anywhere</strong>
+              <span>Assign custom key at <code>chrome://extensions/shortcuts</code></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tutorial-footer">
+        <button type="button" class="tutorial-btn-primary js-tutorial-dismiss">Got it!</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

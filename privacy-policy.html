@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Volume Master Max</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Neo-Brutalist Privacy Policy Styles - Volume Master Max */
+        :root {
+            --bg-main: #faf7f2;
+            --card-bg: #ffffff;
+            --text-primary: #121212;
+            --text-secondary: #4a4a4a;
+            --text-muted: #666666;
+
+            --accent-yellow: #fef08a;
+            --accent-pink: #fbcfe8;
+            --accent-blue: #bae6fd;
+            --accent-green: #bbf7d0;
+            --accent-purple: #e9d5ff;
+            --accent-orange: #fed7aa;
+
+            --border-color: #121212;
+            --border-width: 2.5px;
+            --shadow-hard: 4px 4px 0px #121212;
+            --shadow-hard-sm: 2px 2px 0px #121212;
+            --radius-main: 12px;
+            --radius-sm: 6px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-main: #0f172a;
+                --card-bg: #1e293b;
+                --text-primary: #f8fafc;
+                --text-secondary: #cbd5e1;
+                --text-muted: #94a3b8;
+                --border-color: #f8fafc;
+                --shadow-hard: 4px 4px 0px #f8fafc;
+                --shadow-hard-sm: 2px 2px 0px #f8fafc;
+
+                --accent-yellow: #854d0e;
+                --accent-pink: #831843;
+                --accent-blue: #1e3a8a;
+                --accent-green: #14532d;
+                --accent-purple: #581c87;
+                --accent-orange: #7c2d12;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            line-height: 1.6;
+            font-size: 16px;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: var(--card-bg);
+            border: var(--border-width) solid var(--border-color);
+            box-shadow: var(--shadow-hard);
+            padding: 12px 24px;
+            border-radius: var(--radius-main);
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+        }
+
+        /* Main Content */
+        main {
+            background-color: var(--card-bg);
+            border: var(--border-width) solid var(--border-color);
+            border-radius: var(--radius-main);
+            padding: 40px;
+            box-shadow: var(--shadow-hard);
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+        }
+
+        .effective-date {
+            display: inline-block;
+            background-color: var(--accent-yellow);
+            color: #121212;
+            font-weight: 700;
+            font-size: 14px;
+            padding: 4px 12px;
+            border: var(--border-width) solid var(--border-color);
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-hard-sm);
+            margin-bottom: 32px;
+        }
+
+        section {
+            margin-bottom: 32px;
+        }
+
+        section:last-of-type {
+            margin-bottom: 0;
+        }
+
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+            background-color: var(--accent-blue);
+            color: #121212;
+            display: inline-block;
+            padding: 4px 12px;
+            border: var(--border-width) solid var(--border-color);
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-hard-sm);
+        }
+
+        h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            margin: 20px 0 10px 0;
+            color: var(--text-primary);
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: var(--text-secondary);
+        }
+
+        ul {
+            margin-bottom: 16px;
+            padding-left: 24px;
+            color: var(--text-secondary);
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        strong {
+            color: var(--text-primary);
+        }
+
+        code {
+            font-family: monospace;
+            background-color: var(--accent-pink);
+            color: #121212;
+            padding: 2px 6px;
+            border: 1.5px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        /* Brutalist Callout Box */
+        .highlight-box {
+            background-color: var(--accent-green);
+            color: #121212;
+            border: var(--border-width) solid var(--border-color);
+            box-shadow: var(--shadow-hard-sm);
+            padding: 16px 20px;
+            border-radius: var(--radius-main);
+            margin: 24px 0;
+            font-weight: 600;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            color: #121212;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 32px;
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 20px 12px;
+            }
+
+            main {
+                padding: 24px 18px;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="icon/icon-48.png" alt="Volume Master Max Logo" class="logo-icon" />
+                <span class="logo-text">Volume Master Max</span>
+            </div>
+        </header>
+
+        <main>
+            <h1>Privacy Policy</h1>
+            <div class="effective-date">Effective Date: July 27, 2026</div>
+
+            <section>
+                <h2>Introduction</h2>
+                <p>
+                    <strong>Volume Master Max</strong> ("we," "our," or "us") is committed to respecting and protecting user privacy. This Privacy Policy explains how our Chrome browser extension operates on a strict, client-side, zero-telemetry architecture.
+                </p>
+                <div class="highlight-box">
+                    <p><strong>Zero Data Collection Guarantee:</strong> Volume Master Max does not run remote analytics servers, track your browsing behavior, or send audio data or personal information to external servers.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Information Handling & Local Processing</h2>
+                
+                <h3>1. Audio Streams & Processing</h3>
+                <p>
+                    Volume Master Max processes audio streams from browser tabs to provide volume amplification (up to 600%), equalizer controls, and per-tab volume management.
+                </p>
+                <ul>
+                    <li><strong>Local Web Audio Processing:</strong> Audio streams captured via <code>tabCapture</code> and processed in <code>offscreen</code> documents are routed strictly through local Web Audio API nodes (<code>AudioContext</code>, <code>GainNode</code>, and <code>BiquadFilterNode</code>).</li>
+                    <li><strong>No Audio Storage:</strong> Audio streams are processed in real-time on your local device. Audio data is transiently processed and is <strong>never</strong> recorded, logged, saved, or transmitted anywhere.</li>
+                </ul>
+
+                <h3>2. User Configuration & Preferences</h3>
+                <p>
+                    Volume Master Max allows users to customize their extension preferences (such as dark mode, scroll direction, and equalizer preset selections).
+                </p>
+                <ul>
+                    <li><strong>Where it is stored:</strong> Preferences are stored exclusively inside your browser's local storage (<code>chrome.storage.local</code>).</li>
+                    <li><strong>No External Access:</strong> Saved preferences stay entirely on your local browser and are never transmitted off your device.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Third-Party Services & Remote Code</h2>
+                <p>
+                    Volume Master Max operates 100% offline. We do <strong>NOT</strong> use any remote code, external scripts, third-party APIs, or analytics frameworks. All code executing within the extension is packaged locally.
+                </p>
+            </section>
+
+            <section>
+                <h2>Browser Permissions Justification</h2>
+                <p>
+                    Volume Master Max requests only the minimal browser permissions necessary to provide its core functionality:
+                </p>
+                <ul>
+                    <li><code>activeTab</code> & <code>tabs</code>: Detects tabs playing audio, displays tab titles and favicons, and allows per-tab volume adjustment.</li>
+                    <li><code>tabCapture</code> & <code>offscreen</code>: Routes audio streams locally through Web Audio API nodes for volume amplification up to 600% and equalization.</li>
+                    <li><code>storage</code>: Stores extension preferences locally on your browser.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Developer Policy Certifications</h2>
+                <p>
+                    In accordance with the Chrome Web Store Developer Program Policies:
+                </p>
+                <ul>
+                    <li>We do <strong>NOT</strong> sell or transfer user data to third parties.</li>
+                    <li>We do <strong>NOT</strong> use or transfer user data for purposes unrelated to the extension's single purpose.</li>
+                    <li>We do <strong>NOT</strong> use or transfer user data for creditworthiness or lending purposes.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Changes to This Policy</h2>
+                <p>
+                    We may update our Privacy Policy periodically. Updates will be posted directly to this page with a revised Effective Date.
+                </p>
+            </section>
+
+            <section>
+                <h2>Contact Us</h2>
+                <p>
+                    If you have questions regarding this Privacy Policy, please contact:
+                </p>
+                <ul>
+                    <li><strong>Developer:</strong> Pratham Jain</li>
+                    <li><strong>Email:</strong> <a href="mailto:prathamjain2011@gmail.com" style="color: var(--text-primary); font-weight: 700;">prathamjain2011@gmail.com</a></li>
+                    <li><strong>GitHub Repository:</strong> <a href="https://github.com/prathamjain2011/volume-master-max" target="_blank" style="color: var(--text-primary); font-weight: 700;">https://github.com/prathamjain2011/volume-master-max</a></li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Volume Master Max. Developed with ♥ by Pratham Jain.</p>
+        </footer>
+    </div>
+</body>
+</html>

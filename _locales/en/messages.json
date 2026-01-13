@@ -1,0 +1,10 @@
+{
+  "app_name": {
+    "message": "Volume Master Max",
+    "description": "The name of the extension."
+  },
+  "app_description": {
+    "message": "Up to 600% volume boost",
+    "description": "The description of the extension."
+  }
+}
