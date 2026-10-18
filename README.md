@@ -8,6 +8,23 @@
 
 ---
 
+
+## Tech stack — languages, frameworks, and key dependencies from the manifest and source files.
+
+- **Language:** JavaScript (ES6)
+- **Platform:** Chrome Extension (Manifest V3)
+- **Core components:**
+  - `offscreen.js` – helper for creating a custom require function and exposing extension constants.
+  - `popup.js` – UI logic for the extension popup, handling shortcuts and audio gain.
+  - `service-worker.js` – background service worker managing notifications and storage.
+- **APIs used:** Chrome extension APIs (`chrome.runtime`, `chrome.storage`, `chrome.action`, etc.)
+- **No external dependencies** – the code is self‑contained.
+
+
+## Motivation — why this project exists, derived from what the code actually does.
+
+Volume Master Max is a privacy‑first Chrome extension that gives users granular, per‑tab audio control and the ability to boost volume up to 600 %. It was created to let users hear quiet media without relying on external services or analytics.
+
 ## ✨ Features
 
 - **🔊 Up to 600% Volume Boost**: Amp up quiet videos, audio streams, and web pages beyond standard system limits.
@@ -55,3 +72,75 @@
 Distributed under the MIT License. See `LICENSE` for details.
 
 Developed with ♥ by **Pratham Jain** (`prathamjain2011@gmail.com`).
+
+
+## Tests — how to run them, from manifest scripts or test files; if the repo has no tests, say so in one line.
+
+No test suite is included in this repository.
+
+
+## API reference — the public surface from the existing README, file names, and source files.
+
+- **`offscreen.js` exports**
+  - Constants such as `TARGET_SERVICE_WORKER`, `TARGET_OFFSCREEN_DOCUMENT`.
+  - Action identifiers like `ACTION_POPUP_AUDIO_DATA_GET`, `ACTION_POPUP_GAIN_CHANGE`, etc.
+  - Helper functions: `getAppVersion()`, `getUrl(urlStr, utmContent)`, `updateUrl(urlStr)`.
+- **`service-worker.js` exports**
+  - `notifications` array containing predefined tip notifications.
+  - Storage helper (`get`, `set`) that wraps `chrome.storage.local`.
+- **`popup.js`** (module exports not shown fully) interacts with UI elements and uses the configuration from `./config` and audio utilities from `./audio-gain.js`.
+- **Manifest (manifest.json)** defines the extension as a Manifest V3 Chrome extension, specifying the service worker, offscreen document target, permissions, and UI assets.
+
+
+## Code example — a short usage snippet from the existing README or the source files.
+
+```javascript
+// Example: Getting a stored setting using the storage helper (service‑worker.js)
+const storage = require('./modules/storage');
+storage.get('volumeLevel', 100).then(level => {
+  console.log('Current volume level:', level);
+});
+```
+
+
+## Screenshots — show the user-uploaded images using the relative paths given in the context.
+
+*(No local screenshot images are provided in the repository.)*
+
+
+## Code style — lint/format tools only if configured; otherwise the style observed in the source files.
+
+The project does not include a linting or formatting configuration. The source follows a conventional JavaScript style:
+- Uses `const` and `let` with arrow functions where appropriate.
+- Modules are exported via `module.exports`.
+- Semi‑colons are present at the end of statements.
+- Indentation is two spaces.
+- Inline comments are minimal.
+
+
+## Build status — the real CI badge or workflow when one exists (never invent a badge); otherwise how to build and verify from the repo files.
+
+No continuous‑integration workflow is configured for this repository. To verify the extension:
+1. Follow the **Usage** steps to load the unpacked extension in Chrome.
+2. Open the popup and test the keyboard shortcuts (0‑6, D, V, B, R) to ensure volume control works as expected.
+3. Check the background service worker (chrome://extensions → Details → Service worker) for any errors.
+
+
+## Usage — copy-pasteable usage from the code or existing README. Never invent commands.
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/prathamjain2011/volume-master-max.git
+
+# 2. Open Chrome and go to the extensions page
+#    (you can type this in the address bar)
+chrome://extensions
+
+# 3. Enable **Developer mode** (toggle in the top‑right).
+# 4. Click **Load unpacked** and select the cloned `volume-master-max` folder.
+# 5. Pin the extension toolbar icon to start using Volume Master Max.
+```
+
+---
+
+*Created with [repo-doctor](https://prathamjain.com/projects/repo-doctor)*
