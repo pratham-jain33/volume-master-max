@@ -182,13 +182,13 @@ body.dark-mode {
 /* ── Alert / Outdated ── */
 .alert-banner {
   padding: 8px 12px;
-  background: #fff3cd;
-  border: 2px solid #a08000;
-  box-shadow: 2px 2px 0 #a08000;
+  background: var(--pastel-yellow);
+  border: var(--border);
+  box-shadow: var(--shadow-sm);
   border-radius: var(--radius-sm);
   font-size: 11px;
   font-weight: 700;
-  color: #5a4000;
+  color: var(--ink);
 }
 
 /* ── Notification ── */
@@ -562,21 +562,21 @@ input[type="range"]:not(.vol-slider):not(.tab-card__slider)::-webkit-slider-thum
 
 /* ── Settings View Tutorial Button ── */
 .settings-btn {
-  background: var(--surface-light, #2a2a3c);
-  color: var(--ink, #ffffff);
-  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.15));
-  border-radius: 6px;
+  background: var(--surface);
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-sm);
   padding: 4px 10px;
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: transform .1s, box-shadow .1s;
 }
-.settings-btn:hover {
-  background: var(--accent, #6366f1);
-  color: #fff;
-  border-color: var(--accent, #6366f1);
-}
+.settings-btn:hover { transform: translate(-1px,-1px); box-shadow: 3px 3px 0 var(--ink); }
+.settings-btn:active { transform: translate(2px,2px); box-shadow: none; }
 
 /* ── Tutorial Modal Overlay ── */
 .tutorial-modal {
@@ -600,12 +600,12 @@ input[type="range"]:not(.vol-slider):not(.tab-card__slider)::-webkit-slider-thum
   z-index: 2;
   width: 100%;
   max-width: 320px;
-  background: var(--bg, #1e1e2d);
-  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.12));
-  border-radius: 12px;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+  background: var(--surface);
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: 5px 5px 0 var(--ink);
   padding: 14px 16px;
-  color: var(--ink, #ffffff);
+  color: var(--ink);
   overflow: hidden;
 }
 .tutorial-header {
@@ -613,7 +613,7 @@ input[type="range"]:not(.vol-slider):not(.tab-card__slider)::-webkit-slider-thum
   align-items: center;
   justify-content: space-between;
   padding-bottom: 8px;
-  border-bottom: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
+  border-bottom: 2px solid var(--ink);
 }
 .tutorial-header__title {
   display: flex;
@@ -621,15 +621,15 @@ input[type="range"]:not(.vol-slider):not(.tab-card__slider)::-webkit-slider-thum
   gap: 6px;
   font-size: 14px;
   font-weight: 700;
-  color: var(--ink, #ffffff);
+  color: var(--ink);
 }
 .tutorial-icon {
-  color: var(--accent, #6366f1);
+  color: var(--accent);
 }
 .tutorial-close-btn {
   background: none;
   border: none;
-  color: var(--ink-soft, #94a3b8);
+  color: var(--ink-soft);
   font-size: 20px;
   line-height: 1;
   cursor: pointer;
@@ -638,12 +638,12 @@ input[type="range"]:not(.vol-slider):not(.tab-card__slider)::-webkit-slider-thum
   transition: color 0.15s ease;
 }
 .tutorial-close-btn:hover {
-  color: var(--ink, #ffffff);
+  color: var(--ink);
 }
 .tutorial-intro {
   margin: 8px 0 12px;
   font-size: 11px;
-  color: var(--ink-soft, #94a3b8);
+  color: var(--ink-soft);
   line-height: 1.4;
 }
 .tutorial-grid {
@@ -656,9 +656,9 @@ input[type="range"]:not(.vol-slider):not(.tab-card__slider)::-webkit-slider-thum
   align-items: center;
   justify-content: space-between;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 8px;
+  background: var(--pastel-blue);
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius-sm);
   padding: 6px 10px;
 }
 .tutorial-item--full {
@@ -673,16 +673,16 @@ input[type="range"]:not(.vol-slider):not(.tab-card__slider)::-webkit-slider-thum
 }
 .kbd-key {
   display: inline-block;
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--ink, #ffffff);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-bottom-width: 2px;
+  background: var(--surface);
+  color: var(--ink);
+  border: 1.5px solid var(--ink);
+  border-bottom-width: 2.5px;
   border-radius: 4px;
   padding: 2px 6px;
   font-family: monospace;
   font-size: 11px;
   font-weight: 700;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  box-shadow: 1px 1px 0 var(--ink);
 }
 .tutorial-desc {
   display: flex;
@@ -695,17 +695,17 @@ input[type="range"]:not(.vol-slider):not(.tab-card__slider)::-webkit-slider-thum
 .tutorial-desc strong {
   font-size: 11px;
   font-weight: 600;
-  color: var(--ink, #ffffff);
+  color: var(--ink);
 }
 .tutorial-desc span {
   font-size: 9.5px;
-  color: var(--ink-soft, #94a3b8);
+  color: var(--ink-soft);
 }
 .tutorial-desc code {
-  background: rgba(0, 0, 0, 0.3);
+  background: var(--pastel-purple);
   padding: 1px 4px;
   border-radius: 3px;
-  color: var(--accent-light, #a5b4fc);
+  color: var(--accent);
   font-size: 9.5px;
 }
 .tutorial-footer {
@@ -715,21 +715,35 @@ input[type="range"]:not(.vol-slider):not(.tab-card__slider)::-webkit-slider-thum
 }
 .tutorial-btn-primary {
   width: 100%;
-  background: var(--accent, #6366f1);
+  background: var(--accent);
   color: #ffffff;
-  border: none;
-  border-radius: 6px;
+  border: var(--border);
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-sm);
   padding: 7px 14px;
   font-size: 12px;
   font-weight: 700;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: transform .1s, box-shadow .1s;
 }
-.tutorial-btn-primary:hover {
-  background: var(--accent-hover, #4f46e5);
-}
+.tutorial-btn-primary:hover { transform: translate(-1px,-1px); box-shadow: 3px 3px 0 var(--ink); }
+.tutorial-btn-primary:active { transform: translate(2px,2px); box-shadow: none; }
 
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.96); }
   to { opacity: 1; transform: scale(1); }
+}
+
+/* ── Keyboard focus visibility ── */
+.btn-icon:focus-visible,
+.eq-btn:focus-visible,
+.action-btn:focus-visible,
+.settings-btn:focus-visible,
+.tutorial-btn-primary:focus-visible,
+.tutorial-close-btn:focus-visible,
+.toggle:focus-visible,
+.vol-slider:focus-visible,
+.tab-card__slider:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
 }
